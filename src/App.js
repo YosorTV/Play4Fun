@@ -1,10 +1,16 @@
-import react from 'react';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import GlobalStyle from './components/GlobalStyle';
+import Home from './pages/Home';
 
 const App = () => {
   return (
-    <div>
-      Hello
-    </div>
+    <>
+    <GlobalStyle/>
+    <Route path={["/game/:id", "/"]}>
+      <Home />
+    </Route>
+    </>
   );
 }
 
