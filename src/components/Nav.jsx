@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
+import {fadeIn} from '../animation'
 
 import {searchData} from '../store/actions/gamesAction';
 import {useDispatch} from 'react-redux';
@@ -25,7 +26,7 @@ const Nav = () => {
   }
 
   return (
-    <Header>
+    <Header variants={fadeIn} initial="hidden" animate="show">
       <Logo onClick={clearSearched}>
         <h2>Play <span><img src={logo} alt="logo" /></span> Game</h2>
       </Logo>
@@ -39,7 +40,7 @@ const Nav = () => {
   )
 }
 
-const Header = styled.nav`
+const Header = styled(motion.nav)`
   display:flex;
   padding: 1rem;
   justify-content: space-between;
@@ -76,9 +77,19 @@ const Header = styled.nav`
       }
     }
   }
-`
-export default Nav
 
+  @media(max-width:428px){
+    flex-direction:column;
+    width:100vw;
+    form{
+      width:100%;
+      input{
+        width:80%;
+        margin-left:2rem;
+      }
+    }
+  }
+`
 
 const Logo = styled(motion.div)`
     h2{
@@ -89,15 +100,23 @@ const Logo = styled(motion.div)`
     text-transform:uppercase;
     cursor: pointer;
     transition: .2s all ease-in-out;
-    &:hover{
-      color:#fff;
+    @media(max-width:428px){
+      margin-bottom:1rem;
     }
+      &:hover{
+        color:#fff;
+      }
         img{
           width:2rem;
           height: 2rem;
           transform:scale(1.5);
           display:inline-block;
+            @media(max-width:428px){
+              transform:scale(1.2);
+            }
         }
     }
-
+    
 `
+
+export default Nav

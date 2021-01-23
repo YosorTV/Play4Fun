@@ -183,6 +183,22 @@ const Detail = styled(motion.div)`
       font-family: 'Righteous', cursive;
     }
   }
+  @media(max-width:1366px){
+    width:70%;
+    left:15%;
+  }
+  @media(max-width:1024px){
+    width: 80%;
+    left: 10%;
+  }
+  @media(max-width:834px){
+    width: 90%;
+    left: 5%;
+  }
+  @media(max-width:428px){
+    padding: .5rem 1.5rem;
+    border-radius:1rem;
+  }
 `
 const Stats = styled(motion.div)`
   display:flex;
@@ -197,7 +213,6 @@ const Stats = styled(motion.div)`
       display:inline-flex;
       padding: 0;
       margin-left:.5rem;
-
     }
   }
 `
@@ -205,6 +220,12 @@ const Info = styled(motion.div)`
   display:flex;
   flex-direction:column;
   align-items:flex-end;
+  @media(max-width:926px){
+    width:40%;
+  }
+  @media(max-width:428px){
+    display:none;
+  }
 `
 const Genres = styled(motion.ul)`
   list-style:none;
@@ -232,9 +253,6 @@ const Platforms = styled(motion.div)`
 `
 const Media = styled(motion.div)`
   margin: 2rem auto;
-  img{
-    width:100%;
-  }
 `
 
 const Video = styled(motion.video)`
@@ -243,6 +261,9 @@ const Video = styled(motion.video)`
 `
 const Description = styled(motion.div)`
   margin:2rem 0rem 0rem 0rem;
+  @media(max-width:428px){
+    font-size:.8rem;
+  }
 `
 const About = styled(motion.div)`
   font-size:1rem;

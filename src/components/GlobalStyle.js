@@ -26,4 +26,6 @@ const GlobalStyle = createGlobalStyle`
     display:block;
   }
 `
+
+
 export default GlobalStyle
